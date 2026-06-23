@@ -42,7 +42,7 @@ export const FISICO_GUIDE_HTML = `
 
     <div class="guide-article__section">
       <h3 style="color:var(--cat-color); margin-bottom:var(--space-3);">La Deuda de Sueño y el Rendimiento</h3>
-      <p>¿Qué pasa si duermes mal en la semana y quieres recuperar el fin de semana? La ciencia es clara: el sueño no se recupera, se pierde. Si acumulas una deuda de sueño, tu rendimiento cae en picada. Un claro ejemplo es el deporte de élite. En la NBA, gracias a la influencia de figuras como Manu Ginóbili y LeBron James, se descubrió que la falta de sueño cuesta millones en lesiones. Un estudio en la Universidad de Stanford demostró que cuando los jugadores de baloncesto dormían 10 horas, su precisión en tiros libres y triples aumentaba un 9%, y su fatiga y tiempo de reacción mejoraban drásticamente.</p>
+      <p>¿Qué pasa si dormís mal en la semana y querés recuperar el fin de semana? La ciencia es clara: el sueño no se recupera, se pierde. Si acumulás una deuda de sueño, tu rendimiento cae en picada. Un estudio clásico de la investigadora Cheri Mah en la Universidad de Stanford lo demostró con rigor: al medir al equipo universitario de básquet, comprobó que cuando los jugadores pasaron a dormir 10 horas por noche, su precisión en tiros libres aumentó un 9% y en triples un 9.2%, además de mejorar drásticamente sus tiempos de reacción.</p>
     </div>
 
     <div class="guide-article__section">
