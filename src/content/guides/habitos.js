@@ -101,7 +101,7 @@ export const HABITOS_GUIDE_HTML = `
       <h3 style="margin-bottom:var(--space-3);">El sistema: Método concreto paso a paso</h3>
       <ul style="padding-left:var(--space-5);">
         <li style="margin-bottom:var(--space-2);"><strong>Toque de queda tecnológico y lumínico:</strong> 90 minutos antes de dormir, se terminaron las pantallas. Apagá las luces blancas del techo y usá solo lámparas de pie con luz cálida (naranja o roja) para simular el atardecer y avisar a tu glándula pineal de que segregue melatonina.</li>
-        <li style="margin-bottom:var(--space-2);"><strong>Cena temprana y liviana:</strong> No podés dormir si tu cuerpo está dedicando el 80% de su sangre y energía a digerir un asado. Cená mínimo 2 horas antes de meterte en la cama.</li>
+        <li style="margin-bottom:var(--space-2);"><strong>Cena temprana y liviana:</strong> No podés dormir si tu cuerpo está dedicando una gran cantidad de sangre y energía a digerir un asado. Cená mínimo 2 horas antes de meterte en la cama.</li>
         <li><strong>Volcado de cerebro (Brain Dump):</strong> Si tu mente da vueltas a las cosas pendientes, agarrá un cuaderno, anotá todo lo que tenés que hacer al día siguiente y cerralo. Delegaste esa preocupación en el papel; ya no necesitás recordarla.</li>
       </ul>
     </div>

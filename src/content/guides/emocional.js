@@ -260,7 +260,7 @@ export const EMOCIONAL_GUIDE_HTML = `
 
     <div class="guide-article__intro">
       <h2 style="margin-bottom:var(--space-4);">Gestión de la ansiedad</h2>
-      <p style="margin-bottom:var(--space-3); font-size:1.1rem; line-height:1.6;">La ansiedad es un exceso de futuro. Es tu mente secuestrada por el "y si..." (¿y si me despiden?, ¿y si me enfermo?), proyectando películas de terror que en un 92% de los casos jamás van a suceder. Estás sufriendo por adelantado.</p>
+      <p style="margin-bottom:var(--space-3); font-size:1.1rem; line-height:1.6;">La ansiedad es un exceso de futuro. Es tu mente secuestrada por el "y si..." (¿y si me despiden?, ¿y si me enfermo?), proyectando películas de terror que en la inmensa mayoría de los casos jamás van a suceder. Estás sufriendo por adelantado.</p>
       <div style="background: rgba(var(--cat-color-rgb), 0.1); padding: var(--space-4); border-radius: 8px; border-left: 4px solid var(--cat-color); margin-bottom: var(--space-5);">
         <p style="font-weight: 600; margin-bottom: var(--space-2); color: var(--cat-color);">Preguntate a vos mismo:</p>
         <ul style="padding-left:var(--space-5); margin-bottom: 0;">

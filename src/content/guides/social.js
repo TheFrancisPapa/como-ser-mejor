@@ -640,6 +640,49 @@ export const SOCIAL_GUIDE_HTML = `
     </div>
   </article>
 
+  <article class="guide-article" id="dinamica-familiar">
+    <div class="guide-article__intro">
+      <h2 style="margin-bottom:var(--space-4);">Dinámica Familiar</h2>
+      <p style="margin-bottom:var(--space-3); font-size:1.1rem; line-height:1.6;">La familia es nuestro primer sistema social, pero a veces heredamos dinámicas tóxicas, roles rígidos o mandatos que no elegimos. Romper esos patrones no significa dejar de querer a tu familia, sino empezar a relacionarte desde la adultez y la libertad, estableciendo límites sanos.</p>
+      
+      <div style="background: rgba(var(--cat-color-rgb), 0.1); padding: var(--space-4); border-radius: 8px; border-left: 4px solid var(--cat-color); margin-bottom: var(--space-5);">
+        <p style="font-weight: 600; margin-bottom: var(--space-2); color: var(--cat-color);">Preguntate a vos mismo:</p>
+        <ul style="padding-left:var(--space-5); margin-bottom: 0;">
+          <li style="margin-bottom:var(--space-2);">¿Sentís que cuando visitás a tu familia volvés automáticamente a comportarte como cuando tenías 15 años?</li>
+          <li>¿Tomás decisiones pensando más en no decepcionar a tus padres que en lo que realmente querés para tu vida?</li>
+        </ul>
+      </div>
+
+      <div class="crisis-alert">
+        <p class="crisis-alert__title">🚨 Señales de Alerta Real (Capa de Detección de Crisis)</p>
+        <ul style="margin:0; padding-left:var(--space-5);">
+          <li style="margin-bottom:var(--space-2);"><strong>Enredo patológico:</strong> Imposibilidad absoluta de separar las propias emociones de las de la familia (si mi madre sufre, yo tengo que sufrir).</li>
+          <li><strong>Abuso normalizado:</strong> Aceptar maltrato psicológico o manipulación financiera sistemática justificándolo con "es que es familia".</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-5); border-color: var(--cat-color);">
+      <h3 style="color:var(--cat-color); margin-bottom:var(--space-3);">La realidad: Qué es en serio, sin vueltas</h3>
+      <ul style="padding-left:var(--space-5);">
+        <li style="margin-bottom:var(--space-2);"><strong>Qué pasa cuando está mal:</strong> Estás atrapado en un rol que te asignaron de chico (el rebelde, el salvador, el invisible). Gastás muchísima energía intentando complacer expectativas ajenas.</li>
+        <li><strong>Qué pasa cuando está bien:</strong> Te relacionás con tu familia desde la elección y no desde la obligación. Podés quererlos y al mismo tiempo mantener tu propia individualidad y paz mental.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-5);">
+      <h3 style="margin-bottom:var(--space-3);">Por qué te cuesta: La ciencia y psicología detrás</h3>
+      <p style="margin-bottom:0;">Evolutivamente, pertenecer a la "tribu" garantizaba la supervivencia; ser rechazado significaba la muerte. Por eso, ir en contra de los mandatos familiares dispara alarmas primitivas de peligro en el cerebro.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:var(--space-5);">
+      <h3 style="margin-bottom:var(--space-3);">El sistema: Método concreto paso a paso</h3>
+      <ul style="padding-left:var(--space-5);">
+        <li style="margin-bottom:var(--space-2);"><strong>Diferenciación del yo:</strong> Reconocer dónde terminan tus emociones y dónde empiezan las de ellos.</li>
+        <li style="margin-bottom:var(--space-2);"><strong>Límites sin culpa:</strong> Aprender a decir "no" a dinámicas que te lastiman, sin necesidad de dar largas explicaciones o pedir perdón.</li>
+        <li><strong>Observación objetiva:</strong> Mirar a tus familiares como adultos con sus propios traumas y limitaciones, no solo como "tus padres" o "tus hermanos".</li>
+      </ul>
+    </div>
     <div class="card" style="margin-bottom:var(--space-5); border-color: rgba(var(--cat-color-rgb), 0.4); background: linear-gradient(135deg, var(--surface), rgba(var(--cat-color-rgb), 0.08));">
       <h3 style="margin-bottom:var(--space-3);">🎯 El desafío de 30 días: Estructura de acción</h3>
       <ul style="padding-left:var(--space-5);">
