@@ -12,6 +12,14 @@ export function renderCategory({ params }) {
   const cat = CATEGORIES[slug];
   if (!cat) { navigate('/'); return; }
 
+  // Convert hex color to rgb string for rgba() usage
+  const hexToRgb = (hex) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `${r}, ${g}, ${b}`;
+  };
+
   const state = getState();
   const score = state.results.scores[slug];
   const label = state.results.labels[slug];
@@ -68,7 +76,7 @@ export function renderCategory({ params }) {
 
         <!-- Guía de contenido -->
         ${cat.fullGuide ? `
-        <div style="margin-top:var(--space-10);" class="animate-fade-in-up delay-1">
+        <div style="margin-top:var(--space-10); --cat-color: ${cat.color}; --cat-color-rgb: ${hexToRgb(cat.color)};" class="animate-fade-in-up delay-1">
           ${cat.fullGuide}
         </div>
         ` : guide ? `

@@ -94,6 +94,7 @@ export const CATEGORIES = {
       system: '1. Registrá todos tus gastos, hasta el más mínimo, durante 30 días corridos.\n2. Clasificá tus gastos en tres categorías simples: lo necesario, lo que querés y el ahorro.\n3. Destiná el primer porcentaje de cualquier ingreso a construir un fondo de emergencia de un mes.',
       challenge: 'Anotá cada gasto que hagas en el mismo momento en que lo hacés. Al final del mes, sentate a mirar los números reales sin juzgarte ni buscar excusas.',
     },
+    fullGuide: FINANCIERO_GUIDE_HTML,
   },
   profesional: {
     id: 'profesional',
@@ -107,6 +108,7 @@ export const CATEGORIES = {
       system: '1. Definí qué significa el crecimiento profesional para vos en los próximos 12 meses (no lo que dice tu jefe, lo que querés vos).\n2. Identificá qué habilidad específica te falta para llegar ahí.\n3. Dedicá dos horas por semana exclusivamente a aprender o practicar esa habilidad.',
       challenge: 'Una vez por semana, hacé algo que te saque de tu zona de confort profesional. Pedí un feedback difícil, hablá en una reunión donde suelas callar o proponé una mejora.',
     },
+    fullGuide: PROFESIONAL_GUIDE_HTML,
   },
   habitos: {
     id: 'habitos',
