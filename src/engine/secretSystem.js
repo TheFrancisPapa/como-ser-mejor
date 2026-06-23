@@ -84,7 +84,7 @@ function evalT8({ closingIsSubstantial, closingSkipped }) {
  * Patrón de muro de saltos en una categoría.
  */
 function evalT9({ skipWall }) {
-  return skipWall === 'emocional';
+  return skipWall !== null && skipWall !== undefined;
 }
 
 // ─── Evaluación de triggers especiales para arquetipos ───────────────────────
@@ -152,8 +152,8 @@ export function evaluateSecretSystem(fingerprint, scores, confidence, isSecondDi
     return { archetype: ARCHETYPES.ZERO, triggersActivated: triggered };
   }
 
-  // OPERATOR: T2 + T9 + calidad de texto alta
-  if (triggered.includes('T2') && triggered.includes('T9') && highTextQuality) {
+  // OPERATOR: T2 + T9 + calidad de texto alta + muro en emocional
+  if (triggered.includes('T2') && triggered.includes('T9') && highTextQuality && ctx.skipWall === 'emocional') {
     return { archetype: ARCHETYPES.OPERATOR, triggersActivated: triggered };
   }
 

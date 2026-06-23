@@ -142,7 +142,7 @@ function renderDashboard(profile) {
   if (profile.perceptionContrast === 'under') perceptionText = COPY.dashboard.openingContrastUnder;
 
   app.innerHTML = `
-    <div class="dashboard page-enter">
+    <main class="dashboard page-enter" id="results-main" tabindex="-1">
 
       <!-- Nav -->
       <nav class="nav">
@@ -255,11 +255,11 @@ function renderDashboard(profile) {
         </div>
 
       </div>
-    </div>
+    </main>
 
     ${isSecret && archetype ? `
     <!-- Símbolo del arquetipo (floating, clickeable) -->
-    <div class="archetype-symbol visible" id="archetype-symbol" title="Algo distinto fue detectado.">
+    <div class="archetype-symbol visible" id="archetype-symbol" role="button" tabindex="0" aria-label="Señal secreta detectada" title="Algo distinto fue detectado.">
       ${archetype.symbol}
     </div>
     ` : ''}
@@ -286,8 +286,13 @@ function renderDashboard(profile) {
 
   // Mini cards — navegar a categoría
   document.querySelectorAll('.mini-card[data-cat]').forEach(card => {
-    card.addEventListener('click', () => {
-      navigate(`/categoria/${card.dataset.cat}`);
+    const goToCat = () => navigate(`/categoria/${card.dataset.cat}`);
+    card.addEventListener('click', goToCat);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goToCat();
+      }
     });
   });
 
@@ -297,10 +302,24 @@ function renderDashboard(profile) {
     localStorage.setItem('csm_secret_token', archetype.sessionToken);
     localStorage.setItem('csm_secret_archetype', archetype.id);
 
-    document.getElementById('archetype-symbol')?.addEventListener('click', () => {
-      navigate(`/_s/${archetype.sessionToken}`);
-    });
+    const symbol = document.getElementById('archetype-symbol');
+    if (symbol) {
+      const goToSecret = () => navigate(`/_s/${archetype.sessionToken}`);
+      symbol.addEventListener('click', goToSecret);
+      symbol.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          goToSecret();
+        }
+      });
+    }
   }
+
+  // Focus management
+  setTimeout(() => {
+    const main = document.getElementById('results-main');
+    if (main) main.focus();
+  }, 50);
 }
 
 // ─── Helpers de render ────────────────────────────────────────────────────────
@@ -347,7 +366,7 @@ function renderOtherCategories(profile) {
     const label = profile.labels[catId];
 
     return `
-      <div class="mini-card" data-cat="${catId}" style="--cat-color: ${cat?.color ?? 'var(--accent)'};">
+      <div class="mini-card" data-cat="${catId}" role="button" tabindex="0" aria-label="Ver categoría ${COPY.categories[catId]?.name ?? catId}" style="--cat-color: ${cat?.color ?? 'var(--accent)'};">
         <div class="mini-card__icon">${cat?.icon ?? ''}</div>
         <div class="mini-card__name">${COPY.categories[catId]?.name ?? catId}</div>
         <div class="mini-card__score">${score !== null ? score.toFixed(1) : '—'}</div>

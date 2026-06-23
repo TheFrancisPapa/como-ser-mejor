@@ -62,7 +62,7 @@ export function renderCrisis(onContinue, level = 'medium') {
   const isHigh = level === 'high';
 
   app.innerHTML = `
-    <div style="
+    <div role="main" aria-labelledby="crisis-title" style="
       min-height:100vh;
       background: #faf9f7;
       color: #1a1a1a;
@@ -85,7 +85,7 @@ export function renderCrisis(onContinue, level = 'medium') {
             margin-bottom:16px;
           ">Antes de continuar</p>
 
-          <h2 style="
+          <h2 id="crisis-title" tabindex="-1" style="
             font-family:'Fraunces', Georgia, serif;
             font-size:clamp(1.4rem, 4vw, 1.9rem);
             font-weight:600;
@@ -220,4 +220,10 @@ export function renderCrisis(onContinue, level = 'medium') {
   document.getElementById('crisis-continue').addEventListener('click', () => {
     if (typeof onContinue === 'function') onContinue();
   });
+
+  // Focus management for accessibility
+  setTimeout(() => {
+    const title = document.getElementById('crisis-title');
+    if (title) title.focus();
+  }, 50);
 }
