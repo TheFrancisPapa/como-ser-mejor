@@ -1,0 +1,259 @@
+/**
+ * dashboard.css — Estilos del radar, tarjetas de resultado, y dashboard completo.
+ */
+
+/* ─── Dashboard layout ──────────────────────────────────────────────────────── */
+.dashboard {
+  padding-top: 80px; /* nav height */
+  padding-bottom: var(--space-24);
+}
+.dashboard__header {
+  text-align: center;
+  padding: var(--space-16) var(--space-6) var(--space-10);
+  border-bottom: 1px solid var(--border);
+}
+.dashboard__header h1 {
+  margin-bottom: var(--space-3);
+}
+.dashboard__header p {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+/* ─── Sección del radar ─────────────────────────────────────────────────────── */
+.radar-section {
+  padding: var(--space-16) var(--space-6);
+}
+.radar-wrapper {
+  position: relative;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.radar-canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* ─── Contraste percepción vs realidad ─────────────────────────────────────── */
+.perception-contrast {
+  text-align: center;
+  padding: var(--space-5) var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  margin: var(--space-8) 0;
+}
+.perception-contrast__score {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.perception-contrast__verdict {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-top: var(--space-1);
+}
+.perception-contrast--over .perception-contrast__verdict {
+  color: var(--amber);
+}
+.perception-contrast--under .perception-contrast__verdict {
+  color: var(--solido);
+}
+
+/* ─── Sección "Por dónde empezar" ──────────────────────────────────────────── */
+.priorities-section {
+  padding: var(--space-10) var(--space-6);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: var(--space-3);
+}
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-8);
+}
+.priorities-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ─── Otras categorías (mini-cards) ─────────────────────────────────────────── */
+.other-section {
+  padding: var(--space-10) var(--space-6);
+}
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.mini-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.mini-card:hover {
+  border-color: var(--accent-border);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+.mini-card__icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-2);
+}
+.mini-card__name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: var(--space-2);
+}
+.mini-card__score {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cat-color, var(--accent));
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+/* ─── Puntos ciegos ─────────────────────────────────────────────────────────── */
+.blind-spots-section {
+  padding: var(--space-10) var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.blind-spots-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ─── "Lo que no respondiste" ───────────────────────────────────────────────── */
+.skips-section {
+  padding: var(--space-8) var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.skips-notice {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+.skips-notice__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+.skips-notice__text {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ─── Frase resumen ─────────────────────────────────────────────────────────── */
+.summary-section {
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.summary-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+.summary-phrase {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* ─── CTAs post-dashboard ───────────────────────────────────────────────────── */
+.cta-section {
+  padding: var(--space-12) var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ─── Pantalla de procesamiento ─────────────────────────────────────────────── */
+.processing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  gap: var(--space-6);
+  padding: var(--space-12);
+}
+.processing-screen__text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-dim);
+}
+.processing-screen__msg {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+/* ─── Secuencia de activación secreta ───────────────────────────────────────── */
+.secret-activation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #000;
+  text-align: center;
+  padding: var(--space-12);
+  gap: var(--space-5);
+}
+.secret-activation__line1 {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  animation: secretReveal 800ms cubic-bezier(0.16,1,0.3,1) 200ms both;
+}
+.secret-activation__line2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: #fff;
+  font-weight: 400;
+  font-style: italic;
+  animation: secretReveal 800ms cubic-bezier(0.16,1,0.3,1) 600ms both;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .other-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboard__header {
+    padding: var(--space-10) var(--space-4) var(--space-8);
+  }
+}

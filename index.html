@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="La mayoría cree que se conoce. La mayoría está equivocada. Respondé este diagnóstico y te decimos exactamente por dónde empezar." />
+    <meta name="theme-color" content="#0a0a0f" />
+    <title>¿De verdad te conocés? — Diagnóstico de mejora personal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <!-- Skip to content — accesibilidad para lectores de pantalla y navegación por teclado -->
+    <a href="#main-content" class="skip-to-content">Ir al contenido principal</a>
+
+    <main id="main-content" role="main">
+      <div id="app" aria-live="polite" aria-atomic="false"></div>
+    </main>
+    <div id="transition-overlay" aria-hidden="true"></div>
+
+    <!-- Región de anuncios para screen readers (cambios de página) -->
+    <div
+      id="sr-announce"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;"
+    ></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
