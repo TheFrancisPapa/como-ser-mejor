@@ -137,7 +137,8 @@ function calcPriority(score, categoryId, label, isProtected) {
 
   const cat = CATEGORIES[categoryId];
   const multiplier = cat?.impactMultiplier ?? 1.0;
-  const urgency = label === 'critico' ? 2 : 1;
+  const isUrgentCategory = ['emocional', 'financiero', 'fisico', 'proposito'].includes(categoryId);
+  const urgency = (label === 'critico' && isUrgentCategory) ? 2 : 1;
   const protectedBonus = isProtected ? 5 : 0;
 
   return (10 - score) * multiplier * urgency + protectedBonus;

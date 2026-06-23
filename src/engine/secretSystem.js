@@ -15,7 +15,7 @@ import { ARCHETYPES, ARCHETYPE_PRIORITY } from '../content/archetypes.js';
 function evalT1({ scores, confidence }) {
   const lowCount = Object.values(scores).filter(s => s !== null && s < 3).length;
   const highConfidence = Object.values(confidence).filter(c => c === 'high').length;
-  return lowCount >= 4 && highConfidence >= 5;
+  return lowCount >= 6 && highConfidence >= 5;
 }
 
 /**
@@ -33,17 +33,8 @@ function evalT2({ openingScore, scores }) {
  * T3 — El reloj:
  * Sesión iniciada entre las 00:30 y las 05:00.
  */
-function evalT3({ startHour }) {
+function evalT3({ startHour, startMinute }) {
   if (startHour === null || startHour === undefined) return false;
-  return startHour >= 0 && startHour < 5 || startHour === 0 && startHour >= 0.5;
-  // Simplificado: hora >= 0 y < 5, con minutos >=30 para la media noche
-}
-
-/**
- * T3 — versión corregida.
- */
-function evalT3Clean({ startHour, startMinute }) {
-  if (startHour === null) return false;
   const totalMinutes = startHour * 60 + (startMinute || 0);
   return totalMinutes >= 30 && totalMinutes < 300; // 00:30 a 05:00
 }
@@ -93,7 +84,7 @@ function evalT8({ closingIsSubstantial, closingSkipped }) {
  * Patrón de muro de saltos en una categoría.
  */
 function evalT9({ skipWall }) {
-  return skipWall !== null && skipWall !== undefined;
+  return skipWall === 'emocional';
 }
 
 // ─── Evaluación de triggers especiales para arquetipos ───────────────────────
@@ -130,7 +121,7 @@ export function evaluateSecretSystem(fingerprint, scores, confidence, isSecondDi
   const triggered = [];
   if (evalT1(ctx)) triggered.push('T1');
   if (evalT2(ctx)) triggered.push('T2');
-  if (evalT3Clean({ startHour: fingerprint.startHour, startMinute: fingerprint.startMinute })) triggered.push('T3');
+  if (evalT3({ startHour: fingerprint.startHour, startMinute: fingerprint.startMinute })) triggered.push('T3');
   if (evalT4(ctx)) triggered.push('T4');
   if (evalT5(ctx)) triggered.push('T5');
   if (evalT6(ctx)) triggered.push('T6');

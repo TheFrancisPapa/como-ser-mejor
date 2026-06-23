@@ -16,16 +16,23 @@ import { navigate } from '../router.js';
 const RESOURCES = [
   {
     country: 'Argentina',
-    name: 'Centro de Asistencia al Suicida',
+    name: 'Centro de Asistencia al Suicida (CABA / GBA)',
     contact: '135',
-    type: 'Teléfono gratuito 24h',
+    type: 'Atención de 8:00 a 0:00 hs',
+    url: null,
+  },
+  {
+    country: 'Argentina',
+    name: 'Centro de Asistencia al Suicida (Resto del país)',
+    contact: '0800 345 1435',
+    type: 'Línea gratuita - Atención de 8:00 a 0:00 hs',
     url: null,
   },
   {
     country: 'Argentina',
     name: 'SAME (Sistema de Atención Médica de Emergencias)',
     contact: '107',
-    type: 'Emergencias médicas',
+    type: 'Emergencias médicas 24h',
     url: null,
   },
   {

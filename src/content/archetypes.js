@@ -108,7 +108,7 @@ export const ARCHETYPES = {
   // [̷̷̷] — el modo sin nombre
   UNNAMED: {
     id: 'UNNAMED',
-    symbol: '▪',
+    symbol: '[̷̷̷]',
     symbolAlt: 'sin-nombre',
     // Paleta: gris neutro oscuro, casi sin color
     palette: {
