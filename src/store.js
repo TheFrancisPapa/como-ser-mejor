@@ -46,6 +46,11 @@ const initialState = {
     lastCompletedAt: null, // timestamp de última completación (para cooldown 72h)
     reprobado: false,      // si el diagnóstico fue marcado como no confiable
   },
+
+  // Sistema de aprendizaje (Quizzes y exámenes)
+  learning: {
+    progress: {}, // { categoryId: { passedSubtopics: ['id1', 'id2'], finalAttempts: 0, cooldownUntil: null, toReview: [] } }
+  },
 };
 
 let state = deepClone(initialState);
@@ -107,6 +112,7 @@ export function saveToStorage() {
       diagnostic: state.diagnostic,
       results: state.results,
       session: state.session,
+      learning: state.learning,
     }));
   } catch (_) {}
 }
@@ -119,6 +125,7 @@ export function loadFromStorage() {
     if (parsed.diagnostic) state.diagnostic = { ...deepClone(initialState.diagnostic), ...parsed.diagnostic };
     if (parsed.results) state.results = { ...deepClone(initialState.results), ...parsed.results };
     if (parsed.session) state.session = { ...deepClone(initialState.session), ...parsed.session };
+    if (parsed.learning) state.learning = { ...deepClone(initialState.learning), ...parsed.learning };
     return true;
   } catch (_) {
     return false;
