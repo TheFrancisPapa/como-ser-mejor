@@ -26,6 +26,10 @@ const EVENT_TYPES = {
   COOLDOWN_BYPASSED: 'cooldown_bypassed',
   RESUME_ACCEPTED: 'resume_accepted',
   RESUME_REJECTED: 'resume_rejected',
+  QUIZ_PASSED: 'quiz_passed',
+  QUIZ_FAILED: 'quiz_failed',
+  FINAL_EXAM_PASSED: 'final_exam_passed',
+  FINAL_EXAM_FAILED: 'final_exam_failed',
 };
 
 /**
@@ -107,6 +111,8 @@ export function getAggregatedMetrics() {
     if (qId) skipsByQuestion[qId] = (skipsByQuestion[qId] || 0) + 1;
   });
 
+  const finalExamsFailed = events.filter(e => e.type === EVENT_TYPES.FINAL_EXAM_FAILED);
+
   return {
     totalEvents: events.length,
     diagnosticsCompleted: completed.length,
@@ -118,6 +124,7 @@ export function getAggregatedMetrics() {
     crisisDetections: crises.length,
     secretActivations: secrets.length,
     reprobadoTriggers: reprobados.length,
+    finalExamsFailed: finalExamsFailed.length,
     skipsByQuestion,
   };
 }
